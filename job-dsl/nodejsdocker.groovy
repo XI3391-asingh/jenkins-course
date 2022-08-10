@@ -12,6 +12,8 @@ job('NodeJS Docker example') {
             forcePull(false)
             createFingerprints(false)
             skipDecorate()
+            }
         }
     }
 }
+    
