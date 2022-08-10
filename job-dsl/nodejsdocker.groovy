@@ -3,7 +3,7 @@ job('DockerBuildandPublishDSL') {
      scm {
         git {
         remote {
-                url('https://github.com/PrabhuVignesh/Docker-Tomcat.git')
+                url('https://github.com/XI3391-asingh/Docker-Tomcat.git')
             }
             wrappers {
                 preBuildCleanup()
@@ -14,7 +14,7 @@ job('DockerBuildandPublishDSL') {
 
     steps {
         dockerBuildAndPublish {
-            repositoryName('vickyrajagopal/tomcat')
+            repositoryName('carbonaraaah/jenkins-jobdsl')
             registryCredentials('docker-hub')
         }
     }
