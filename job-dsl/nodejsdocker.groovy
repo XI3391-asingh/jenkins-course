@@ -13,9 +13,13 @@ job('NodeJS Docker example') {
                          // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
     }
     steps {
-       dockerBuildAndPublish {
+      dockerBuildAndPublish {
             repositoryName('carbonaraaah/jenkins-jobdsl')
+            tag('${BUILD_TIMESTAMP}-${GIT_REVISION,length=7}')
             registryCredentials('docker-hub')
+            forcePull(false)
+            createFingerprints(false)
+            skipDecorate()
         }
     }
 }
