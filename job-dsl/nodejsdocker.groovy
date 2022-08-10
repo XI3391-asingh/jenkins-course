@@ -1,17 +1,22 @@
-job('NodeJS Docker example') {
-//     scm {
-//         git('https://github.com/wardviaene/docker-demo.git') {  node -> // is hudson.plugins.git.GitSCM
-//             node / gitConfigName('XI3391-asingh')
-//             node / gitConfigEmail('abhishek.singh5@xebia.com')
-//         }
+job('DockerBuildandPublishDSL') {
+    description('Build and Publish vickyrajagopal Tomcat server Image to docker repository')
+     scm {
+        git {
+        remote {
+                url('https://github.com/PrabhuVignesh/Docker-Tomcat.git')
+                credentials('jenkinsslave-gihub')
+            }
+            wrappers {
+                preBuildCleanup()
+            } 
+            branch('*/' + 'master')
+        }
+    }
+
     steps {
-      dockerBuildAndPublish {
-            repositoryName('carbonaraaah/jenkins-jobdsl')
-            tag('${BUILD_TIMESTAMP}-${GIT_REVISION,length=7}')
-            registryCredentials('docker-hub')
-            forcePull(false)
-            createFingerprints(false)
-            skipDecorate()
-     }  
-  }
+        dockerBuildAndPublish {
+            repositoryName('vickyrajagopal/tomcat')
+            registryCredentials('e6a34d22-3562-4e22-a525-012c681fece1')
+        }
+    }
 }
