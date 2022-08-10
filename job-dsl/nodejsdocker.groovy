@@ -4,7 +4,6 @@ job('DockerBuildandPublishDSL') {
         git {
         remote {
                 url('https://github.com/PrabhuVignesh/Docker-Tomcat.git')
-                credentials('jenkinsslave-gihub')
             }
             wrappers {
                 preBuildCleanup()
