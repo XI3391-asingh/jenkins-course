@@ -16,7 +16,7 @@ job('DockerBuildandPublishDSL') {
     steps {
         dockerBuildAndPublish {
             repositoryName('vickyrajagopal/tomcat')
-            registryCredentials('e6a34d22-3562-4e22-a525-012c681fece1')
+            registryCredentials('docker-hub')
         }
     }
 }
