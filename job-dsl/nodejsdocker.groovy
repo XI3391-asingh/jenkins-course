@@ -15,7 +15,11 @@ job('DockerBuildandPublishDSL') {
     steps {
         dockerBuildAndPublish {
             repositoryName('carbonaraaah/jenkins-jobdsl')
+            tag('${BUILD_TIMESTAMP}-${GIT_REVISION,length=7}')
             registryCredentials('docker-hub')
+            forcePull(false)
+            createFingerprints(false)
+            skipDecorate()
         }
     }
 }
