@@ -18,7 +18,7 @@ job('DockerBuildandPublishDSL') {
             tag('0.1.0')
             registryCredentials('docker-hub')
             forcePull(true)
-            createFingerprints(false)
+            createFingerprints(true)
             skipDecorate()
         }
     }
