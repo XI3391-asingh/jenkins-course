@@ -1,5 +1,5 @@
 job('DockerBuildandPublishDSL') {
-    description('Build and Publish vickyrajagopal Tomcat server Image to docker repository')
+    description('Build and Publish Tomcat server Image to docker repository')
      scm {
         git {
         remote {
