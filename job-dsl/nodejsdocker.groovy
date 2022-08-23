@@ -5,11 +5,8 @@ job('Docker Build and Push') {
             node / gitConfigEmail('abhishek.singh5@xebia.com')
         }
     }
-//     triggers {
-//         scm('H/5 * * * *')
-//     }
     wrappers {
-        nodejs('nodejs') // this is the name of the NodeJS installation in 
+        nodejs('NodeJS Latest') // this is the name of the NodeJS installation in 
                          // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
     }
     steps {
