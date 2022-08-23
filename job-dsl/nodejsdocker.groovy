@@ -16,7 +16,7 @@ job('Docker Build and Push') {
         dockerBuildAndPublish {
             repositoryName('carbonaraaah/jenkins-jobdsl')
             tag('0.1.0')
-            registryCredentials('docker-hub')
+            registryCredentials('dockerhub')
             forcePull(false)
             forceTag(false)
             createFingerprints(false)
