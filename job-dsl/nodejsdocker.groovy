@@ -1,4 +1,4 @@
-job('Docker Build and Push') {
+job('DockerBuild') {
     scm {
         git('https://github.com/wardviaene/docker-demo.git') {  node -> // is hudson.plugins.git.GitSCM
             node / gitConfigName('XI3391-asingh')
